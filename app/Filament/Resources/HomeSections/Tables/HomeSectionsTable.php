@@ -12,6 +12,11 @@ class HomeSectionsTable
     public static function configure(Table $table): Table
     {
         return $table
+            ->columns([
+                \Filament\Tables\Columns\TextColumn::make('type')->sortable(),
+                \Filament\Tables\Columns\TextColumn::make('title')->searchable(),
+                \Filament\Tables\Columns\IconColumn::make('is_visible')->boolean()->sortable(),
+                \Filament\Tables\Columns\TextColumn::make('order')->sortable(),
             ])
             ->filters([
                 //
