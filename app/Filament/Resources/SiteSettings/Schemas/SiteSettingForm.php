@@ -46,6 +46,13 @@ class SiteSettingForm
                         \Filament\Forms\Components\TextInput::make('linkedin_url')
                             ->url(),
                     ])->columns(3),
+                \Filament\Forms\Components\Section::make('Maps & Integration')
+                    ->schema([
+                        \Filament\Forms\Components\Textarea::make('google_maps_embed')
+                            ->label('Google Maps Embed Code')
+                            ->helperText('Paste the <iframe> code from Google Maps share.')
+                            ->columnSpanFull(),
+                    ]),
             ]);
     }
 }
