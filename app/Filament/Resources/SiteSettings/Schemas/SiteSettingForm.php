@@ -10,7 +10,7 @@ class SiteSettingForm
     {
         return $schema
             ->components([
-                \Filament\Forms\Components\Section::make('General')
+                \Filament\Schemas\Components\Section::make('General')
                     ->schema([
                         \Filament\Forms\Components\TextInput::make('app_name')
                             ->required(),
@@ -21,14 +21,14 @@ class SiteSettingForm
                             ->image()
                             ->directory('settings'),
                     ]),
-                \Filament\Forms\Components\Section::make('Theme Colors')
+                \Filament\Schemas\Components\Section::make('Theme Colors')
                     ->schema([
                         \Filament\Forms\Components\ColorPicker::make('primary_color'),
                         \Filament\Forms\Components\ColorPicker::make('secondary_color'),
                         \Filament\Forms\Components\ColorPicker::make('bg_color'),
                         \Filament\Forms\Components\ColorPicker::make('text_color'),
                     ])->columns(2),
-                \Filament\Forms\Components\Section::make('Contact Info')
+                \Filament\Schemas\Components\Section::make('Contact Info')
                     ->schema([
                         \Filament\Forms\Components\TextInput::make('contact_email')
                             ->email(),
@@ -37,7 +37,7 @@ class SiteSettingForm
                         \Filament\Forms\Components\Textarea::make('address')
                             ->columnSpanFull(),
                     ])->columns(2),
-                \Filament\Forms\Components\Section::make('Social Links')
+                \Filament\Schemas\Components\Section::make('Social Links')
                     ->schema([
                         \Filament\Forms\Components\TextInput::make('facebook_url')
                             ->url(),
@@ -46,7 +46,7 @@ class SiteSettingForm
                         \Filament\Forms\Components\TextInput::make('linkedin_url')
                             ->url(),
                     ])->columns(3),
-                \Filament\Forms\Components\Section::make('Maps & Integration')
+                \Filament\Schemas\Components\Section::make('Maps & Integration')
                     ->schema([
                         \Filament\Forms\Components\Textarea::make('google_maps_embed')
                             ->label('Google Maps Embed Code')
