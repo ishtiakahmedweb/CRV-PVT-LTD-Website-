@@ -13,18 +13,18 @@ class UserForm
     {
         return $schema
             ->components([
-                TextInput::make('name')
+                \Filament\Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
-                TextInput::make('email')
+                \Filament\Forms\Components\TextInput::make('email')
                     ->email()
                     ->required()
                     ->maxLength(255)
                     ->unique(User::class, 'email', ignoreRecord: true),
-                TextInput::make('password')
+                \Filament\Forms\Components\TextInput::make('password')
                     ->password()
                     ->dehydrated(fn ($state) => filled($state))
-                    ->required(fn (string $context): bool => $context === 'create')
+                    ->required(fn ($context): bool => $context === 'create')
                     ->maxLength(255),
             ]);
     }
