@@ -6,7 +6,10 @@
     <section id="hero" class="relative h-screen flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0">
             @if($homeSections['hero']->image)
-                <img src="{{ asset('images/' . $homeSections['hero']->image) }}" class="w-full h-full object-contain opacity-30" alt="Hero">
+                <img src="{{ asset('images/' . $homeSections['hero']->image) }}"
+                     class="absolute w-full opacity-30"
+                     style="top:50%; left:0; transform:translateY(-50%); height:auto; min-height:100%;"
+                     alt="Hero">
             @else
                 <div class="w-full h-full bg-gradient-to-br from-black via-gray-900 to-bg-main"></div>
             @endif
