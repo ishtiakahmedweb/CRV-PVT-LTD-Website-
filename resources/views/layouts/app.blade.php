@@ -8,7 +8,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     @php
         $manifest = json_decode(file_get_contents(public_path('build/manifest.json')), true);
@@ -33,20 +33,20 @@
         }
     </style>
 </head>
-<body class="antialiased bg-bg-main text-text-main font-['Outfit']">
+<body class="antialiased bg-bg-main text-text-main font-sans">
     <header class="fixed w-full z-50 bg-bg-main/80 backdrop-blur-md border-b border-white/5">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="text-2xl font-bold tracking-wider text-primary">
                 {{ $siteSettings->app_name ?? 'CRV LTD' }}
             </div>
             <div class="hidden md:flex space-x-8 text-sm font-medium">
-                <a href="#hero" class="hover:text-primary transition-colors">Home</a>
-                <a href="#about" class="hover:text-primary transition-colors">About</a>
-                <a href="#products" class="hover:text-primary transition-colors">Products</a>
-                <a href="#contact" class="hover:text-primary transition-colors">Contact</a>
+                <a href="#hero" class="hover:text-primary transition-colors">হোম</a>
+                <a href="#about" class="hover:text-primary transition-colors">আমাদের সম্পর্কে</a>
+                <a href="#products" class="hover:text-primary transition-colors">পণ্যসমূহ</a>
+                <a href="#contact" class="hover:text-primary transition-colors">যোগাযোগ</a>
             </div>
             <a href="https://wa.me/{{ $siteSettings->whatsapp_number ?? '' }}" class="bg-primary text-bg-main px-6 py-2 rounded-full font-bold text-sm hover:scale-105 transition-transform">
-                WhatsApp
+                হোয়াটসঅ্যাপ
             </a>
         </nav>
     </header>
@@ -63,10 +63,10 @@
             </p>
             <div class="flex justify-center space-x-6 mb-8">
                 @if($siteSettings->facebook_url ?? false)
-                    <a href="{{ $siteSettings->facebook_url }}" class="text-gray-400 hover:text-primary transition-colors">Facebook</a>
+                    <a href="{{ $siteSettings->facebook_url }}" class="text-gray-400 hover:text-primary transition-colors">ফেসবুক</a>
                 @endif
                 @if($siteSettings->instagram_url ?? false)
-                    <a href="{{ $siteSettings->instagram_url }}" class="text-gray-400 hover:text-primary transition-colors">Instagram</a>
+                    <a href="{{ $siteSettings->instagram_url }}" class="text-gray-400 hover:text-primary transition-colors">ইনস্টাগ্রাম</a>
                 @endif
             </div>
             <div class="text-gray-600 text-xs">

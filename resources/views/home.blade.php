@@ -21,7 +21,7 @@
                 {{ $homeSections['hero']->subtitle }}
             </p>
             <a href="{{ $homeSections['hero']->cta_link ?? '#products' }}" class="inline-block bg-primary text-bg-main px-10 py-4 rounded-full font-bold text-lg hover:scale-105 transition-all shadow-lg shadow-primary/20 hero-btn">
-                {{ $homeSections['hero']->cta_text ?? 'Explore Products' }}
+                {{ $homeSections['hero']->cta_text ?? 'পণ্যসমূহ দেখুন' }}
             </a>
         </div>
     </section>
@@ -32,8 +32,8 @@
         <div class="container mx-auto px-6">
             <div class="flex justify-between items-end mb-16 section-header">
                 <div>
-                    <h2 class="text-4xl font-bold mb-4">Our Premium Collection</h2>
-                    <p class="text-gray-500">Engineered for maximum performance and protection.</p>
+                    <h2 class="text-4xl font-bold mb-4">আমাদের প্রিমিয়াম কালেকশন</h2>
+                    <p class="text-gray-500">ইঞ্জিনের সর্বোচ্চ কর্মক্ষমতা এবং সুরক্ষার জন্য বিশেষভাবে তৈরি।</p>
                 </div>
             </div>
 
@@ -67,7 +67,7 @@
                     @endif
                 </div>
                 @empty
-                <div class="col-span-full text-center py-20 text-gray-600">No products available at the moment.</div>
+                <div class="col-span-full text-center py-20 text-gray-600">এই মুহূর্তে কোনো পণ্য নেই।</div>
                 @endforelse
             </div>
         </div>
@@ -80,8 +80,8 @@
     @if($testimonials->count() > 0)
     <section class="py-24 bg-black/20 testimonial-section">
         <div class="container mx-auto px-6 text-center mb-16">
-            <h2 class="text-4xl font-bold mb-4">Client Feedback</h2>
-            <p class="text-gray-500">What drivers and engineers say about CRV.</p>
+            <h2 class="text-4xl font-bold mb-4">ক্লায়েন্ট ফিডব্যাক</h2>
+            <p class="text-gray-500">সিআরভি সম্পর্কে চালক এবং প্রকৌশলীরা যা বলছেন।</p>
         </div>
         <div class="container mx-auto px-6">
             <div class="swiper testimonialSwiper">
@@ -139,7 +139,7 @@
                     {!! $homeSections['about']->content !!}
                 </div>
                 <a href="{{ $homeSections['about']->cta_link ?? '#' }}" class="inline-flex items-center text-primary font-bold hover:gap-4 gap-2 transition-all">
-                    <span>{{ $homeSections['about']->cta_text ?? 'Learn More' }}</span>
+                    <span>{{ $homeSections['about']->cta_text ?? 'আরও জানুন' }}</span>
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                 </a>
             </div>
@@ -152,23 +152,23 @@
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
                 <div class="contact-form-container">
-                    <h2 class="text-4xl font-bold mb-4">Send an Inquiry</h2>
-                    <p class="text-gray-500 mb-10">We usually respond within 24 hours.</p>
+                    <h2 class="text-4xl font-bold mb-4">অনুসন্ধান পাঠান</h2>
+                    <p class="text-gray-500 mb-10">আমরা সাধারণত ২৪ ঘণ্টার মধ্যে উত্তর দিই।</p>
 
                     <form id="contactForm" class="space-y-6">
                         @csrf
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <input type="text" name="name" placeholder="Full Name" required class="bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-primary transition-colors text-white">
-                            <input type="email" name="email" placeholder="Email Address" required class="bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-primary transition-colors text-white">
+                            <input type="text" name="name" placeholder="আপনার নাম" required class="bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-primary transition-colors text-white">
+                            <input type="email" name="email" placeholder="ইমেইল ঠিকানা" required class="bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-primary transition-colors text-white">
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <input type="text" name="phone" placeholder="Phone Number" class="bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-primary transition-colors text-white">
-                            <input type="text" name="subject" placeholder="Subject" class="bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-primary transition-colors text-white">
+                            <input type="text" name="phone" placeholder="ফোন নম্বর" class="bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-primary transition-colors text-white">
+                            <input type="text" name="subject" placeholder="বিষয়" class="bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-primary transition-colors text-white">
                         </div>
-                        <textarea name="message" placeholder="How can we help?" rows="4" required class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-primary transition-colors text-white"></textarea>
+                        <textarea name="message" placeholder="আমরা আপনাকে কীভাবে সাহায্য করতে পারি?" rows="4" required class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-primary transition-colors text-white"></textarea>
                         
                         <button type="submit" id="submitBtn" class="bg-primary text-bg-main px-12 py-4 rounded-full font-bold text-lg hover:scale-105 transition-all shadow-lg shadow-primary/20 flex items-center gap-3">
-                            <span>Send Message</span>
+                            <span>মেসেজ পাঠান</span>
                             <div id="loader" class="hidden w-5 h-5 border-2 border-bg-main border-t-transparent rounded-full animate-spin"></div>
                         </button>
                         <div id="formMessage" class="mt-4 hidden p-4 rounded-2xl text-sm"></div>

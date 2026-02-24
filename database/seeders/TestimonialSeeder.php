@@ -13,25 +13,25 @@ class TestimonialSeeder extends Seeder
     public function run(): void
     {
         \App\Models\Testimonial::create([
-            'name' => 'John Doe',
-            'role' => 'Heavy Truck Driver',
-            'content' => 'The engine oil from CRV has significantly improved my truck\'s fuel efficiency and engine smoothness. Highly recommended!',
+            'name' => 'জনি আহমেদ',
+            'role' => 'ভারী ট্রাক চালক',
+            'content' => 'সিআরভি-র ইঞ্জিন অয়েল আমার ট্রাকের জ্বালানি সাশ্রয় এবং ইঞ্জিনের মসৃণতা উল্লেখযোগ্যভাবে উন্নত করেছে। আমি এটি ব্যবহারের জন্য বিশেষভাবে সুপারিশ করছি!',
             'rating' => 5,
             'order' => 1,
         ]);
 
         \App\Models\Testimonial::create([
-            'name' => 'Sarah Smith',
-            'role' => 'Automotive Engineer',
-            'content' => 'Impressive technical specifications. CRV lubricants provide superior protection under extreme temperatures.',
+            'name' => 'সারা ইসলাম',
+            'role' => 'অটোমোটিভ ইঞ্জিনিয়ার',
+            'content' => 'চমৎকার টেকনিক্যাল স্পেসিফিকেশন। সিআরভি লুব্রিকেন্ট চরম তাপমাত্রায় ইঞ্জিনের সর্বোচ্চ সুরক্ষা প্রদান করে।',
             'rating' => 5,
             'order' => 2,
         ]);
 
         \App\Models\Testimonial::create([
-            'name' => 'Mike Johnson',
-            'role' => 'Garage Owner',
-            'content' => 'My customers are very happy with CRV. It\'s a reliable brand that delivers what it promises.',
+            'name' => 'মাইনুল হোসাইন',
+            'role' => 'গ্যারেজ মালিক',
+            'content' => 'আমার কাস্টমাররা সিআরভি ব্যবহারে খুব খুশি। এটি একটি নির্ভরযোগ্য ব্র্যান্ড যা তার প্রতিশ্রুতি রক্ষা করে।',
             'rating' => 4,
             'order' => 3,
         ]);

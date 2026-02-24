@@ -15,11 +15,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
         User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+            'name' => 'Admin',
+            'email' => 'admin@crvltd.com',
+            'password' => bcrypt('password'),
+        ]);
+
+        $this->call([
+            SiteSettingSeeder::class,
+            HomeSectionSeeder::class,
+            ProductSeeder::class,
+            TestimonialSeeder::class,
         ]);
     }
 }
