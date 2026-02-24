@@ -6,7 +6,7 @@
     <section id="hero" class="relative h-screen flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0">
             @if($homeSections['hero']->image)
-                <img src="{{ asset('storage/' . $homeSections['hero']->image) }}" class="w-full h-full object-cover opacity-30" alt="Hero">
+                <img src="{{ asset('images/' . $homeSections['hero']->image) }}" class="w-full h-full object-cover opacity-30" alt="Hero">
             @else
                 <div class="w-full h-full bg-gradient-to-br from-black via-gray-900 to-bg-main"></div>
             @endif
@@ -42,7 +42,7 @@
                 <div class="product-card group relative bg-white/5 border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-all duration-500 hover:-translate-y-2">
                     <div class="relative h-64 mb-8 flex items-center justify-center overflow-hidden rounded-2xl bg-black/40">
                         @if($product->image)
-                            <img src="{{ asset('storage/' . $product->image) }}" class="h-full object-contain group-hover:scale-110 transition-transform duration-700" alt="{{ $product->name }}">
+                            <img src="{{ asset('images/' . $product->image) }}" class="h-full object-contain group-hover:scale-110 transition-transform duration-700" alt="{{ $product->name }}">
                         @else
                             <div class="text-primary opacity-20 text-8xl font-black">OIL</div>
                         @endif
@@ -99,7 +99,7 @@
                             </div>
                             <div class="flex items-center">
                                 @if($testimonial->image)
-                                    <img src="{{ asset('storage/' . $testimonial->image) }}" class="w-12 h-12 rounded-full object-cover mr-4" alt="{{ $testimonial->name }}">
+                                    <img src="{{ asset('images/' . $testimonial->image) }}" class="w-12 h-12 rounded-full object-cover mr-4" alt="{{ $testimonial->name }}">
                                 @endif
                                 <div class="text-left">
                                     <h4 class="font-bold text-white">{{ $testimonial->name }}</h4>
@@ -125,7 +125,7 @@
                     <div class="absolute -inset-4 bg-primary/20 blur-2xl group-hover:bg-primary/30 transition-all rounded-3xl opacity-50"></div>
                     <div class="relative rounded-3xl overflow-hidden border border-white/10">
                         @if($homeSections['about']->image)
-                            <img src="{{ asset('storage/' . $homeSections['about']->image) }}" class="w-full h-auto" alt="About">
+                            <img src="{{ asset('images/' . $homeSections['about']->image) }}" class="w-full h-auto" alt="About">
                         @else
                             <div class="h-[400px] bg-gray-900 flex items-center justify-center text-primary font-bold">About Image</div>
                         @endif

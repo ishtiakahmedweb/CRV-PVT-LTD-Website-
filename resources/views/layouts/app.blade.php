@@ -38,7 +38,7 @@
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center">
                 @if($siteSettings->logo)
-                    <img src="{{ asset('storage/' . $siteSettings->logo) }}" alt="{{ $siteSettings->app_name }}" class="h-10 w-auto">
+                    <img src="{{ asset('images/' . $siteSettings->logo) }}" alt="{{ $siteSettings->app_name }}" class="h-10 w-auto">
                 @else
                     <div class="text-2xl font-bold tracking-wider text-primary">
                         {{ $siteSettings->app_name ?? 'CRV LTD' }}

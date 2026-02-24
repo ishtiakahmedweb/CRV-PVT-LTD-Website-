@@ -20,7 +20,7 @@ class ProductForm
                     ->unique(Product::class, 'slug', ignoreRecord: true),
                 \Filament\Forms\Components\FileUpload::make('image')
                     ->image()
-                    ->disk('public')
+                    ->disk('uploads')
                     ->directory('products')
                     ->maxSize(10240)
                     ->helperText('Recommended: 800×800 px (Square) | Best Format: Transparent PNG | Max: 10MB'),

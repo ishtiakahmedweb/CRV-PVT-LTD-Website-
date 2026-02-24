@@ -25,7 +25,7 @@ class HomeSectionForm
                 \Filament\Forms\Components\RichEditor::make('content'),
                 \Filament\Forms\Components\FileUpload::make('image')
                     ->image()
-                    ->disk('public')
+                    ->disk('uploads')
                     ->directory('homepage')
                     ->maxSize(10240)
                     ->helperText('Recommended: 1920×1080 (Hero) or 1000×1200 (About) | Max: 10MB'),

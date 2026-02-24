@@ -15,7 +15,7 @@ class TestimonialForm
                 \Filament\Forms\Components\TextInput::make('role'),
                 \Filament\Forms\Components\FileUpload::make('image')
                     ->image()
-                    ->disk('public')
+                    ->disk('uploads')
                     ->directory('testimonials')
                     ->maxSize(5120)
                     ->helperText('Recommended: 200×200 px (Square) | Max: 5MB'),

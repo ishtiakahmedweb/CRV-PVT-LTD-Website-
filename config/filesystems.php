@@ -47,6 +47,16 @@ return [
             'report' => false,
         ],
 
+        // cPanel-safe disk: stores directly in public/images/ (no symlink needed)
+        'uploads' => [
+            'driver' => 'local',
+            'root' => public_path('images'),
+            'url' => rtrim(env('APP_URL', 'http://localhost'), '/').'/images',
+            'visibility' => 'public',
+            'throw' => false,
+            'report' => false,
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),
