@@ -20,6 +20,16 @@ class SiteSettingForm
                         \Filament\Forms\Components\FileUpload::make('favicon')
                             ->image()
                             ->directory('settings'),
+                        \Filament\Forms\Components\Textarea::make('footer_text')
+                            ->columnSpanFull(),
+                    ]),
+                \Filament\Schemas\Components\Section::make('Header Menu')
+                    ->description('Add menu items as Name and URL (e.g. Home => #hero)')
+                    ->schema([
+                        \Filament\Forms\Components\KeyValue::make('header_menu')
+                            ->keyLabel('Menu Name')
+                            ->valueLabel('URL / Link')
+                            ->addActionLabel('Add Menu Item'),
                     ]),
                 \Filament\Schemas\Components\Section::make('Theme Colors')
                     ->schema([

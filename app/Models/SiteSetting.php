@@ -21,5 +21,12 @@ class SiteSetting extends Model
         'facebook_url',
         'instagram_url',
         'linkedin_url',
+        'google_maps_embed',
+        'header_menu',
+        'footer_text',
+    ];
+
+    protected $casts = [
+        'header_menu' => 'array',
     ];
 }

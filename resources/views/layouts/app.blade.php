@@ -36,14 +36,26 @@
 <body class="antialiased bg-bg-main text-text-main font-sans">
     <header class="fixed w-full z-50 bg-bg-main/80 backdrop-blur-md border-b border-white/5">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold tracking-wider text-primary">
-                {{ $siteSettings->app_name ?? 'CRV LTD' }}
+            <div class="flex items-center">
+                @if($siteSettings->logo)
+                    <img src="{{ asset('storage/' . $siteSettings->logo) }}" alt="{{ $siteSettings->app_name }}" class="h-10 w-auto">
+                @else
+                    <div class="text-2xl font-bold tracking-wider text-primary">
+                        {{ $siteSettings->app_name ?? 'CRV LTD' }}
+                    </div>
+                @endif
             </div>
             <div class="hidden md:flex space-x-8 text-sm font-medium">
-                <a href="#hero" class="hover:text-primary transition-colors">হোম</a>
-                <a href="#about" class="hover:text-primary transition-colors">আমাদের সম্পর্কে</a>
-                <a href="#products" class="hover:text-primary transition-colors">পণ্যসমূহ</a>
-                <a href="#contact" class="hover:text-primary transition-colors">যোগাযোগ</a>
+                @if($siteSettings->header_menu)
+                    @foreach($siteSettings->header_menu as $name => $link)
+                        <a href="{{ $link }}" class="hover:text-primary transition-colors">{{ $name }}</a>
+                    @endforeach
+                @else
+                    <a href="#hero" class="hover:text-primary transition-colors">হোম</a>
+                    <a href="#about" class="hover:text-primary transition-colors">আমাদের সম্পর্কে</a>
+                    <a href="#products" class="hover:text-primary transition-colors">পণ্যসমূহ</a>
+                    <a href="#contact" class="hover:text-primary transition-colors">যোগাযোগ</a>
+                @endif
             </div>
             <a href="https://wa.me/{{ $siteSettings->whatsapp_number ?? '' }}" class="bg-primary text-bg-main px-6 py-2 rounded-full font-bold text-sm hover:scale-105 transition-transform">
                 হোয়াটসঅ্যাপ
@@ -59,7 +71,7 @@
         <div class="container mx-auto px-6 text-center">
             <div class="text-xl font-bold text-primary mb-6">{{ $siteSettings->app_name ?? 'CRV LTD' }}</div>
             <p class="text-gray-500 text-sm mb-8 max-w-md mx-auto">
-                {{ $siteSettings->address ?? 'Premium Engine Oil Lubricant Solutions.' }}
+                {{ $siteSettings->footer_text ?? ($siteSettings->address ?? 'Premium Engine Oil Lubricant Solutions.') }}
             </p>
             <div class="flex justify-center space-x-6 mb-8">
                 @if($siteSettings->facebook_url ?? false)
