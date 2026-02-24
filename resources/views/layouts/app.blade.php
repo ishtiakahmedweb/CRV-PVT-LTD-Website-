@@ -10,7 +10,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @php
+        $manifest = json_decode(file_get_contents(public_path('build/manifest.json')), true);
+        $cssFile = $manifest['resources/css/app.css']['file'] ?? 'assets/app.css';
+        $jsFile  = $manifest['resources/js/app.js']['file'] ?? 'assets/app.js';
+    @endphp
+    <link rel="stylesheet" href="{{ asset('build/' . $cssFile) }}">
+    <script src="{{ asset('build/' . $jsFile) }}" defer></script>
 
     <!-- Swiper & GSAP -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
