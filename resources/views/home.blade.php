@@ -6,11 +6,11 @@
     <section id="hero" class="relative h-screen flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0">
             @if($homeSections['hero']->image)
-                <img src="{{ asset('images/' . $homeSections['hero']->image) }}" class="w-full h-full object-cover opacity-75" alt="Hero">
+                <img src="{{ asset('images/' . $homeSections['hero']->image) }}" class="w-full h-full object-contain opacity-30" alt="Hero">
             @else
                 <div class="w-full h-full bg-gradient-to-br from-black via-gray-900 to-bg-main"></div>
             @endif
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-bg-main via-transparent to-transparent"></div>
         </div>
         
         <div class="container mx-auto px-6 relative z-10 text-center">
