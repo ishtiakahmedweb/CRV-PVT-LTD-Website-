@@ -15,7 +15,8 @@ class TestimonialForm
                 \Filament\Forms\Components\TextInput::make('role'),
                 \Filament\Forms\Components\FileUpload::make('image')
                     ->image()
-                    ->directory('testimonials'),
+                    ->directory('testimonials')
+                    ->helperText('Recommended: 200×200 px (Square)'),
                 \Filament\Forms\Components\Select::make('rating')
                     ->options([
                         1 => '1 Star',

@@ -16,10 +16,12 @@ class SiteSettingForm
                             ->required(),
                         \Filament\Forms\Components\FileUpload::make('logo')
                             ->image()
-                            ->directory('settings'),
+                            ->directory('settings')
+                            ->helperText('Recommended: 400×120 px | Best Format: Transparent PNG'),
                         \Filament\Forms\Components\FileUpload::make('favicon')
                             ->image()
-                            ->directory('settings'),
+                            ->directory('settings')
+                            ->helperText('Recommended: 64×64 px'),
                         \Filament\Forms\Components\Textarea::make('footer_text')
                             ->columnSpanFull(),
                     ]),

@@ -20,7 +20,8 @@ class ProductForm
                     ->unique(Product::class, 'slug', ignoreRecord: true),
                 \Filament\Forms\Components\FileUpload::make('image')
                     ->image()
-                    ->directory('products'),
+                    ->directory('products')
+                    ->helperText('Recommended: 800×800 px (Square) | Best Format: Transparent PNG'),
                 \Filament\Forms\Components\RichEditor::make('description')
                     ->columnSpanFull(),
                 \Filament\Forms\Components\KeyValue::make('specifications')
