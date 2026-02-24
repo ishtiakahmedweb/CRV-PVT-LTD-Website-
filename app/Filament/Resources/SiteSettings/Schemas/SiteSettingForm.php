@@ -16,11 +16,13 @@ class SiteSettingForm
                             ->required(),
                         \Filament\Forms\Components\FileUpload::make('logo')
                             ->image()
+                            ->disk('public')
                             ->directory('settings')
                             ->maxSize(5120)
                             ->helperText('Recommended: 400×120 px | Best Format: Transparent PNG | Max: 5MB'),
                         \Filament\Forms\Components\FileUpload::make('favicon')
                             ->image()
+                            ->disk('public')
                             ->directory('settings')
                             ->maxSize(1024)
                             ->helperText('Recommended: 64×64 px | Max: 1MB'),
