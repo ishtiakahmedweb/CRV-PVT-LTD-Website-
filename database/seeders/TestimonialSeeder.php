@@ -12,6 +12,8 @@ class TestimonialSeeder extends Seeder
      */
     public function run(): void
     {
+        \App\Models\Testimonial::truncate();
+
         \App\Models\Testimonial::create([
             'name' => 'জনি আহমেদ',
             'role' => 'ভারী ট্রাক চালক',
