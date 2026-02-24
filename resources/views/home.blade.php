@@ -6,14 +6,21 @@
     <section id="hero" class="relative h-screen flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0">
             @if($homeSections['hero']->image)
-                <img src="{{ asset('images/' . $homeSections['hero']->image) }}"
-                     class="absolute w-full opacity-30"
-                     style="top:50%; left:0; transform:translateY(-50%); height:auto; min-height:100%;"
-                     alt="Hero">
+                <!-- Background Blur Layer (Fills screen, matches image colors) -->
+                <img src="{{ asset('images/' . $homeSections['hero']->image) }}" 
+                     class="absolute inset-0 w-full h-full object-cover blur-3xl opacity-20 scale-110" 
+                     alt="">
+                
+                <!-- Main Image Layer (Full image, no cropping) -->
+                <div class="absolute inset-0 flex items-center justify-center p-4 md:p-12">
+                    <img src="{{ asset('images/' . $homeSections['hero']->image) }}" 
+                         class="max-w-full max-h-full object-contain opacity-40 shadow-2xl" 
+                         alt="Hero">
+                </div>
             @else
                 <div class="w-full h-full bg-gradient-to-br from-black via-gray-900 to-bg-main"></div>
             @endif
-            <div class="absolute inset-0 bg-gradient-to-t from-bg-main via-transparent to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-bg-main via-bg-main/20 to-transparent"></div>
         </div>
         
         <div class="container mx-auto px-6 relative z-10 text-center">
