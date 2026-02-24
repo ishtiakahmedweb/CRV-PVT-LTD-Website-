@@ -25,12 +25,14 @@ class UsersTable
             ->filters([
                 //
             ])
-            ->actions([
-                \Filament\Tables\Actions\EditAction::make(),
-                \Filament\Tables\Actions\DeleteAction::make(),
+            ->recordActions([
+                \Filament\Actions\EditAction::make(),
+                \Filament\Actions\DeleteAction::make(),
             ])
-            ->bulkActions([
-                \Filament\Tables\Actions\DeleteBulkAction::make(),
+            ->toolbarActions([
+                \Filament\Actions\BulkActionGroup::make([
+                    \Filament\Actions\DeleteBulkAction::make(),
+                ]),
             ]);
     }
 }
