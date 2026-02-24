@@ -21,7 +21,8 @@ class ProductForm
                 \Filament\Forms\Components\FileUpload::make('image')
                     ->image()
                     ->directory('products')
-                    ->helperText('Recommended: 800×800 px (Square) | Best Format: Transparent PNG'),
+                    ->maxSize(10240)
+                    ->helperText('Recommended: 800×800 px (Square) | Best Format: Transparent PNG | Max: 10MB'),
                 \Filament\Forms\Components\RichEditor::make('description')
                     ->columnSpanFull(),
                 \Filament\Forms\Components\KeyValue::make('specifications')

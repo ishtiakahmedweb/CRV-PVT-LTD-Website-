@@ -17,11 +17,13 @@ class SiteSettingForm
                         \Filament\Forms\Components\FileUpload::make('logo')
                             ->image()
                             ->directory('settings')
-                            ->helperText('Recommended: 400×120 px | Best Format: Transparent PNG'),
+                            ->maxSize(5120)
+                            ->helperText('Recommended: 400×120 px | Best Format: Transparent PNG | Max: 5MB'),
                         \Filament\Forms\Components\FileUpload::make('favicon')
                             ->image()
                             ->directory('settings')
-                            ->helperText('Recommended: 64×64 px'),
+                            ->maxSize(1024)
+                            ->helperText('Recommended: 64×64 px | Max: 1MB'),
                         \Filament\Forms\Components\Textarea::make('footer_text')
                             ->columnSpanFull(),
                     ]),

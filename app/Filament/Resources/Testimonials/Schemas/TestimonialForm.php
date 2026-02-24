@@ -16,7 +16,8 @@ class TestimonialForm
                 \Filament\Forms\Components\FileUpload::make('image')
                     ->image()
                     ->directory('testimonials')
-                    ->helperText('Recommended: 200×200 px (Square)'),
+                    ->maxSize(5120)
+                    ->helperText('Recommended: 200×200 px (Square) | Max: 5MB'),
                 \Filament\Forms\Components\Select::make('rating')
                     ->options([
                         1 => '1 Star',

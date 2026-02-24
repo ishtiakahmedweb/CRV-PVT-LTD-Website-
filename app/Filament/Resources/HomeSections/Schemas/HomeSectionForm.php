@@ -26,7 +26,8 @@ class HomeSectionForm
                 \Filament\Forms\Components\FileUpload::make('image')
                     ->image()
                     ->directory('homepage')
-                    ->helperText('Recommended: 1920×1080 (Hero) or 1000×1200 (About) | Aspect Ratio: 16:9 or 5:6'),
+                    ->maxSize(10240)
+                    ->helperText('Recommended: 1920×1080 (Hero) or 1000×1200 (About) | Max: 10MB'),
                 \Filament\Forms\Components\TextInput::make('cta_text'),
                 \Filament\Forms\Components\TextInput::make('cta_link'),
                 \Filament\Forms\Components\Toggle::make('is_visible')
