@@ -21,21 +21,21 @@ class ContactController extends Controller
         if ($validator->fails()) {
             return response()->json([
                 'success' => false,
+                'message' => 'ভ্যালিডেশন ব্যর্থ হয়েছে।',
                 'errors' => $validator->errors()
             ], 422);
         }
 
         try {
             ContactMessage::create($request->all());
-
             return response()->json([
                 'success' => true,
-                'message' => 'Your message has been sent successfully!'
+                'message' => 'মেসেজটি সফলভাবে পাঠানো হয়েছে। ধন্যবাদ!'
             ]);
         } catch (\Exception $e) {
             return response()->json([
                 'success' => false,
-                'message' => 'Something went wrong. Please try again later.'
+                'message' => 'দুঃখিত, মেসেজটি পাঠানো সম্ভব হয়নি। আবার চেষ্টা করুন।'
             ], 500);
         }
     }
