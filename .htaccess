@@ -1,11 +1,10 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
     
-    # 1. If the request is for an actual file/folder in the root, serve it
-    RewriteCond %{REQUEST_FILENAME} -f [OR]
-    RewriteCond %{REQUEST_FILENAME} -d
-    RewriteRule ^ - [L]
+    # Disable Directory Indexing
+    Options -Indexes
 
-    # 2. Redirect everything else to the public folder
-    RewriteRule ^(.*)$ public/$1 [L]
+    # Redirect everything to the public folder
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteRule ^(.*)$ public/$1 [L,NC]
 </IfModule>
